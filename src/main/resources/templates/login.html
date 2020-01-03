@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Gest</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-head" style="background-color:#eff3f8;padding-top:40px">
+                    <div class="container">
+                        <div class="row" style="height:150px">
+                            <div class="col-md-6 ">
+                                <h1 th:text="#{home.page.title}"></h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <div class="portlet light ">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="icon-globe"></i>
+                                            <span class="caption-subject bold uppercase" th:text="#{home.page.change.header}"></span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body form">
+                                        <form role="form">
+                                            <div class="form-body">
+                                                <div class="form-group">
+                                                    <label th:text="#{home.page.change.label}"></label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-question"></i>
+                                                        </span>
+                                                        <select id="languageSelect" class="form-control">
+                                                            <option value="">--SELECT--</option>
+                                                            <option value="en" th:text="#{home.page.change.lang.en}"></option>
+                                                            <option value="id" th:text="#{home.page.change.lang.id}"></option>
+                                                            <option value="es" th:text="#{home.page.change.lang.es}"></option>
+                                                            <option value="fr" th:text="#{home.page.change.lang.fr}"></option>
+                                                        </select> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="container">
+    
+    <form th:action="@{/login}" method="POST" class="form-signin">
+        <h3 class="form-signin-heading" th:text="#{home.page.connexion}"></h3>
+        <br/>
+
+        <input type="text" id="email" name="email" th:placeholder="Email"
+               class="form-control"/> <br/>
+        <input type="password" th:placeholder="Password"
+               id="password" name="password" class="form-control"/> <br/>
+
+        <div align="center" th:if="${param.error}">
+            <p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" name="Submit" value="#{home.page.connexion}" type="Submit"
+                th:text="Login"></button>
+        <a class="btn btn-lg btn-succes btn-block" 
+             href="/registration"   th:text="#{home.page.inscription}"></a>
+    </form>
+</div>
+
+ <script type="text/javascript">
+            $(document).ready(function() {
+                $("#languageSelect").change(function () {
+                    var selectedOption = $('#languageSelect').val();
+                    if (selectedOption != '') {
+                        window.location.replace('./login?lang=' + selectedOption);
+                    }
+                });
+            });
+        </script>
+</body>
+</html>

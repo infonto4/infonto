@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Vegetable Products</title>
+<link href="materialize.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""></script>
+</head>
+<body>
+        <nav class="sidenav1">
+            <div class="sidenav-wrapper">
+                <ul class="">
+                    <li><a href=""><i class="material-icons">add</i></a></li>
+                    <li><a href=""><i class="material-icons">edit</i></a></li>
+                    <li><a href=""><i class="material-icons">lock_outline</i></a></li>
+                </ul>
+            </div>
+        </nav>
+   <br><br>
+   <h5 class="red-text text-recent-3" style="text-align: center;">Add User</h5>
+    <section class="login container">
+        <div class="row">
+            <form class="col s12 offset-s2">
+                <div class="row login">
+                    <div class="input-field col s8">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="textarea1" type="text" class="materialize-textarea">
+                        <label for="textarea1">Username</label>
+                    </div>
+                    <div class="input-field col s8">
+                        <i class="material-icons prefix">email</i>
+                        <input id="textarea2" type="text"  class="materialize-textarea">
+                        <label for="textarea2">Email</label>
+                    </div>
+                    <div class="input-field col s8">   
+                        <i class="material-icons prefix">account_circle</i>
+                        <label>Select role</label>
+                        <br><br><br>
+                            <p>
+                                <label>
+                                    <input class="with-gap" name="group1" type="radio"  />
+                                    <span>Patient</span>
+                                </label>
+                            </p> 
+                            <p>
+                                <label>
+                                    <input class="with-gap" name="group1" type="radio"  />
+                                    <span>Doctor</span>
+                                </label>
+                            </p> 
+                            <p>
+                                <label>
+                                    <input class="with-gap" name="group1" type="radio"  />
+                                    <span>Decider</span>
+                                </label>
+                            </p> 
+                            <p>
+                                <label>
+                                    <input class="with-gap" name="group1" type="radio"  />
+                                    <span>Epidermologist</span>
+                                </label>
+                            </p>              
+                    </div>
+                    <div class="input-field col s8">
+                            <i class="material-icons prefix">lock_open</i>
+                            <input id="textarea2" type="password"  class="materialize-textarea">
+                            <label for="textarea2">Password</label>
+                    </div>
+                    <div class="input-field col s8">
+                        <i class="material-icons prefix">lock_open</i>
+                        <input id="textarea2" type="password"  class="materialize-textarea">
+                        <label for="textarea2">Confirm Password</label>
+                    </div>
+                    <div class="col s8"><br>
+                        <button class="btn red recent-3 " type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>  
+                </div>
+            </form>
+        </div>
+  	</section>
+  	
+  	<!--<section class="red accent-3">
+  		<footer class="footer">
+          
+        </footer>
+  	</section>-->
+<script src="js/materialize.js"></script>
+
+</body>
+</html>

@@ -37,7 +37,29 @@ h4 {
 	color:grey !important;
 	font-weight:bold !important;
 }
+
+nav .search {
+    margin-top:0px !important;
+    position: relative;
+    left: 90%;
+    width: 100% !important;
+}
+.result-1 {
+    margin-top: 30px;
+}
+.result-1:first-child{
+    margin-top: 0px !important;
+}
 .footer {
 	color:#fff !important;
 	padding:20px;
+}
+.sidenav1 {
+    height: 100% !important;
+    position: fixed !important;
+    width: 55px;
+    background-color: #ff1744 !important;
+}
+.sidenav1 ul li {
+    display: block !important;
 }
