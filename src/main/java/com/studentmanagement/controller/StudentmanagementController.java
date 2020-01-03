@@ -31,7 +31,7 @@ public class StudentmanagementController {
     @Autowired
 	private StudentDAO studentDao;
 	
-	@RequestMapping(value="/acceuil")
+	@RequestMapping(value="/")
 	public String acceuilRegistration() {
 		
 		return "index";
@@ -137,7 +137,7 @@ public class StudentmanagementController {
 		return countries;
 	}
 
-    @RequestMapping(value={"/", "/login"}, method = RequestMethod.GET)
+    @RequestMapping(value={"/login"}, method = RequestMethod.GET)
     public ModelAndView login(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("login");
