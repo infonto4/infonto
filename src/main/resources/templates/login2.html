@@ -3,9 +3,15 @@
       xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Gest</title>
+    <title>Search engine</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/materialize.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="materialize.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -62,22 +68,32 @@
     <form th:action="@{/login}" method="POST" class="form-signin">
         <h3 class="form-signin-heading" th:text="#{home.page.connexion}"></h3>
         <br/>
-
-        <input type="text" id="email" name="email" th:placeholder="Email"
-               class="form-control"/> <br/>
-        <input type="password" th:placeholder="Password"
-               id="password" name="password" class="form-control"/> <br/>
+		<div class="input-field col s8">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input type="text" id="email" name="email" th:placeholder="Email"
+               class="materialize-textarea"/> <br/>
+                       
+                        <label for="email">Email</label>
+        </div>
+        <div class="input-field col s8">
+                        <i class="material-icons prefix">lock_open</i>
+                        <input type="password" th:placeholder="Password"
+               id="password" name="password" class="materialize-textarea"/> <br/>
+                       
+                        <label for="password">Password</label>
+        </div>
+        
 
         <div align="center" th:if="${param.error}">
             <p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" name="Submit" value="#{home.page.connexion}" type="Submit"
+        <button class="btn red recent-3 " name="Submit" value="#{home.page.connexion}" type="Submit"
                 th:text="Login"></button>
         <a class="btn btn-lg btn-succes btn-block" 
              href="/registration"   th:text="#{home.page.inscription}"></a>
     </form>
 </div>
-
+<script type="text/javascript" th:src="@{/js/materialize.js}"></script>
  <script type="text/javascript">
             $(document).ready(function() {
                 $("#languageSelect").change(function () {
