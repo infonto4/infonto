@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Vegetable Products</title>
+<title>infonto</title>
 <link th:href="@{/css/materialize.css}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link th:href="@{/css/style.css}" rel="stylesheet">
@@ -13,9 +13,20 @@
 	<nav class="red accent-3">
 		<div class="container">
 			<div class="nav-wrapper">
-		      <a href="#!" class="brand-logo">Infonto Search</a>
+		      <a href="index" class="brand-logo">Infonto Search</a>
 		      <ul class="right hide-on-med-and-down">
-		        <li><a href="login"><i class="material-icons">lock_outline</i></a></li>
+		          <li class="col s4"><a href="login">LOG IN</a></li>
+		          <li>
+			          <div class="box">
+			         	  <select id="languageSelect" class="form-control">
+	                          <option value="">SELECT LANG</option>
+	                          <option value="en" th:text="#{home.page.change.lang.en}"></option>
+	                          <option value="id" th:text="#{home.page.change.lang.id}"></option>
+	                          <option value="es" th:text="#{home.page.change.lang.es}"></option>
+	                          <option value="fr" th:text="#{home.page.change.lang.fr}"></option>
+	                      </select>
+	                  </div> 
+	               </li>
 		      </ul>
 		    </div>
 		</div>
@@ -23,7 +34,10 @@
   	<section class="slider">
   		<h2>Infonto Search</h2>
   		<h5>It is very expensive to give bad medical care to poor people in a rich country.</h5>
-  		<div class="container"><input placeholder="Search" class="col s12 search"></div>
+  		<div class="container col s12">
+  			<input placeholder="Search" class="search">
+  			<button class="btn red accent-3">SEARCH</button>
+  		</div>
   	</section>
   	
   	<!--<section class="red accent-3">
@@ -32,5 +46,15 @@
         </footer>
   	</section>-->
 <script th:src="@{/js/materialize.js}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#languageSelect").change(function () {
+            var selectedOption = $('#languageSelect').val();
+            if (selectedOption != '') {
+               window.location.replace('./login?lang=' + selectedOption);
+            }
+        });
+    });
+</script>
 </body>
 </html>
